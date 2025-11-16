@@ -67,16 +67,16 @@ public class QuestUI {
 
             Hitbox hb = questHitboxes.get(i);
 
-            int trackerCount = 1;
+            int trackerCount = 0;
             for (AbstractQuest.Tracker t : quest.trackers) {
                 if (!t.hidden()) ++trackerCount;
             }
 
-            float height = SMALL_SPACING * trackerCount;
+            float height = LARGE_SPACING + SMALL_SPACING * trackerCount;
             currentY -= height;
 
             hb.resize(quest.width, height - 2);
-            hb.translate(xPos - quest.width, currentY);
+            hb.translate(xPos - quest.width, currentY + 1);
             hb.update();
 
             if (hb.hovered) {
