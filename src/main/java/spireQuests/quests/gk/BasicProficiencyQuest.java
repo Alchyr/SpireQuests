@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static spireQuests.util.CompatUtil.CARDISTRY_ID;
+
 public class BasicProficiencyQuest extends AbstractQuest {
     public static final Color TITLE_PURPLE = new Color(183/255f, 95/255f, 245/255f, 1);
     private static final Map<String, List<String>> CHAR_MAP = new HashMap<>();
@@ -28,7 +30,7 @@ public class BasicProficiencyQuest extends AbstractQuest {
         CHAR_MAP.put("THE_SILENT", Arrays.asList(Survivor.ID, Thriver.ID));
         CHAR_MAP.put("DEFECT", Arrays.asList(Dualcast.ID, TripleCast.ID));
         CHAR_MAP.put("WATCHER", Arrays.asList(Vigilance.ID, Balance.ID));
-        CHAR_MAP.put("THE_PACKMASTER", Arrays.asList("anniv5:Cardistry", Cardmancy.ID));
+        CHAR_MAP.put("THE_PACKMASTER", Arrays.asList(CARDISTRY_ID, Cardmancy.ID));
     }
     private String cardToPlayId = Madness.ID;
     private String rewardCardId = Madness.ID;

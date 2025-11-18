@@ -38,6 +38,7 @@ import spireQuests.quests.QuestGenerator;
 import spireQuests.quests.QuestManager;
 import spireQuests.rewards.SingleCardReward;
 import spireQuests.ui.QuestBoardScreen;
+import spireQuests.util.CompatUtil;
 import spireQuests.util.TexLoader;
 
 import java.io.IOException;
@@ -80,8 +81,6 @@ public class Anniv8Mod implements
     public static final Map<String, Keyword> keywords = new HashMap<>();
 
     public static HashSet<String> questPackages = new HashSet<>();
-
-    public static AbstractCard.CardColor PM_COLOR = AbstractCard.CardColor.COLORLESS;
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
@@ -168,10 +167,7 @@ public class Anniv8Mod implements
         ConsoleCommand.addCommand("addquest", AddQuestCommand.class);
         ConsoleCommand.addCommand("spawnquest", SpawnQuestCommand.class);
 
-        AbstractCard pmCard = CardLibrary.getCard("anniv5:Cardistry");
-        if(pmCard != null) {
-            PM_COLOR = pmCard.color;
-        }
+        CompatUtil.postInit();
     }
 
     public static void addPotions() {

@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.powers.ReboundPower;
 import spireQuests.quests.gk.powers.UpgradeNextPower;
 import spireQuests.util.Wiz;
 
-import static spireQuests.Anniv8Mod.PM_COLOR;
 import static spireQuests.Anniv8Mod.makeID;
+import static spireQuests.util.CompatUtil.PM_COLOR;
 
 public class Cardmancy extends AbstractBPCard {
     public static final String ID= makeID(Cardmancy.class.getSimpleName());
